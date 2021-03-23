@@ -1,4 +1,8 @@
 <h1>Campers Show Page</h1>
 
-<h3><%= camper.name %></h3>
-<h3><%= camper.age %></h3>
+<h3><%= @camper.name %></h3>
+<h3><%= @camper.age %></h3>
+
+<h4><% @camper.activities.each do |activity|%></h4>
+<h4><%=activity.name%></h4>
+<%end%>

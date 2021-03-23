@@ -13,16 +13,25 @@ class CampersController < ApplicationController
 
   def new
     @camper = Camper.new
+
+    #redirect_to camper_path(@camper.id)
   end
 
   def create
-    @camper = Artist.create(camper_params)
+    @camper = Camper.create(camper_params)
+
+    redirect_to camper_path(@camper.id)
   end
 
   def update
   end
 
   def delete
+    @camper = Camper.create(camper_params)
+
+    @camper.destroy
+
+    redirect_to camper_path(@camper.id)
   end
 
   private
