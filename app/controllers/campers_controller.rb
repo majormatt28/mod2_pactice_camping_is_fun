@@ -24,14 +24,15 @@ class CampersController < ApplicationController
   end
 
   def update
+    @camper = Camper.find(params[:id])
+
+    @camper.update
   end
 
   def delete
-    @camper = Camper.create(camper_params)
+    @camper = Camper.find(params[:id])
 
     @camper.destroy
-
-    redirect_to camper_path(@camper.id)
   end
 
   private
