@@ -18,7 +18,7 @@ class SignupsController < ApplicationController
     def create
         @signup = Signup.create(signup_params)
 
-        redirect_to signup_path(signup.id)
+        redirect_to camper_path(camper.id)
     end
 
     def update
